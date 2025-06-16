@@ -226,9 +226,10 @@ class LeaderboardEvaluator(object):
         else:
             self.world.wait_for_tick()
 
-        if CarlaDataProvider.get_map().name != town:
-            raise Exception("The CARLA server uses the wrong map!"
-                            "This scenario requires to use map {}".format(town))
+        map_name = CarlaDataProvider.get_map().name.split("/")[-1]
+        if map_name != town:
+            raise Exception("The CARLA server uses the wrong map! This scenario requires the use of map {}".format(town))
+
 
     def _register_statistics(self, config, checkpoint, entry_status, crash_message=""):
         """
