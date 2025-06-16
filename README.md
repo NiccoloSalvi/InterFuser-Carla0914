@@ -1,3 +1,36 @@
+# 🧠 InterFuser (Forked Version)
+
+This is a custom fork of the original [InterFuser repository](https://github.com/opendilab/InterFuser), modified for compatibility with CARLA 0.9.14 and Python 3.8.
+
+## 🔧 Modifications in this fork
+
+This fork of InterFuser introduces several changes to ensure compatibility with **Python 3.8** and **CARLA 0.9.14**, as well as to simplify agent evaluation and analysis. The main modifications are:
+
+- 🔄 **Dependency Fixes**:
+  - Removed `matplotlib==3.0.3` and `open3d==0.9.0.0` from `requirements.txt` due to incompatibilities.
+  - Added `carla==0.9.14` to ensure proper simulation behavior.
+
+- 🧩 **Route Planning Fixes**:
+  - Removed all usage of `GlobalRoutePlannerDAO`, which is unavailable in CARLA 0.9.14.
+  - Refactored related files (`route_manipulation.py`, `atomic_behaviors.py`, `atomic_trigger_conditions.py`) to use `GlobalRoutePlanner(map, resolution)` directly.
+
+- 🗺️ **Evaluator Fix**:
+  - Improved map name comparison in `leaderboard_evaluator.py` to handle different CARLA path formats.
+
+- 📁 **Model Configuration**:
+  - Set up `interfuser_config.py` to easily define the path to pretrained model weights.
+
+- 🧪 **Evaluation Script**:
+  - Modified `run_evaluation.sh` to work with the updated environment and directory structure.
+
+- 📸 **Image Saving Support**:
+  - Edited `interfuser_agent.py` to save sensor data (e.g., RGB images) for post-hoc analysis of the agent's behavior.
+
+See [RUNNING.md](./RUNNING.md) for full execution instructions.
+
+--- 
+# ⬇️ Original README from InterFuser
+
 # InterFuser: Safety-Enhanced Autonomous Driving Using Interpretable Sensor Fusion Transformer
 ![pipeline](assets/pipeline.png)
 > [Hao Shao](http://hao-shao.com/), [Letian Wang](https://letianwang0.wixsite.com/myhome), RuoBing Chen, [Hongsheng Li](http://www.ee.cuhk.edu.hk/~hsli/), [Yu Liu](https://liuyu.us/)
