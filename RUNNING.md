@@ -6,8 +6,6 @@ This document provides step-by-step instructions to set up the environment and r
 
 ## 🧱 1. Environment Setup
 
-> ⚠️ This step is only necessary if you intend to run the agent locally.
-
 Create and activate a Conda environment:
 ```bash
 conda create -n interfuser38 python=3.8
@@ -17,7 +15,7 @@ conda activate interfuser38
 Clone your fork of the InterFuser repository:
 
 ```bash
-git clone https://github.com/<your-username>/InterFuser-Carla0914.git
+git clone https://github.com/NiccoloSalvi/InterFuser-Carla0914.git
 cd InterFuser-Carla0914
 ```
 
